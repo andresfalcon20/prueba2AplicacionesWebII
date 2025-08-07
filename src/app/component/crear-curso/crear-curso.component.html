@@ -1,36 +1,57 @@
 <div class="card">
   <div class="card2">
-    <form class="form">
+    <form [formGroup]="cursoForm" (ngSubmit)="agregarCurso()" class="form">
+
       <p id="heading">Registro de Cursos</p>
 
       <div class="field">
-        <input [(ngModel)]="curso.nombre" name="nombre" class="input-field" placeholder="Nombre del curso" autocomplete="off" />
+        <input formControlName="nombre" class="input-field" placeholder="Nombre del curso" autocomplete="off" />
+        <span class="text-red-500 text-sm" *ngIf="cursoForm.get('nombre')?.invalid && cursoForm.get('nombre')?.touched">
+          El nombre es obligatorio
+        </span>
       </div>
 
       <div class="field">
-        <input [(ngModel)]="curso.descripcion" name="descripcion" class="input-field" placeholder="Descripción" autocomplete="off" />
+        <input formControlName="descripcion" class="input-field" placeholder="Descripción" autocomplete="off" />
+        <span class="text-red-500 text-sm" *ngIf="cursoForm.get('descripcion')?.invalid && cursoForm.get('descripcion')?.touched">
+          La descripción es obligatoria
+        </span>
       </div>
 
       <div class="field">
-        <input [(ngModel)]="curso.duracion" type="number" name="duracion" class="input-field" placeholder="Duración en horas" autocomplete="off" />
+        <input formControlName="duracion" type="number" class="input-field" placeholder="Duración en horas" autocomplete="off" />
+        <span class="text-red-500 text-sm" *ngIf="cursoForm.get('duracion')?.invalid && cursoForm.get('duracion')?.touched">
+          La duración debe ser al menos 1 hora
+        </span>
+        <p *ngIf="cursoForm.get('duracion')?.valid">
+  Duración: {{ cursoForm.get('duracion')?.value | horas }}
+</p>
       </div>
 
       <div class="field">
-        <input [(ngModel)]="curso.profesor" name="profesor" class="input-field" placeholder="Profesor" autocomplete="off" />
+        <input formControlName="profesor" class="input-field" placeholder="Profesor" autocomplete="off" />
+        <span class="text-red-500 text-sm" *ngIf="cursoForm.get('profesor')?.invalid && cursoForm.get('profesor')?.touched">
+          El nombre del profesor es obligatorio
+        </span>
       </div>
 
       <div class="field">
-        <input [(ngModel)]="curso.categoria" name="categoria" class="input-field" placeholder="Categoría" autocomplete="off" />
+        <input formControlName="categoria" class="input-field" placeholder="Categoría" autocomplete="off" />
+        <span class="text-red-500 text-sm" *ngIf="cursoForm.get('categoria')?.invalid && cursoForm.get('categoria')?.touched">
+          La categoría es obligatoria
+        </span>
       </div>
 
       <div class="field">
-        <input [(ngModel)]="curso.fechaInicio" type="date" name="fechaInicio" class="input-field" />
+        <input formControlName="fechaInicio" type="date" class="input-field" />
+        <span class="text-red-500 text-sm" *ngIf="cursoForm.get('fechaInicio')?.invalid && cursoForm.get('fechaInicio')?.touched">
+          La fecha de inicio es obligatoria
+        </span>
       </div>
 
       <div class="btn">
-        <button type="button" class="button1" (click)="agregarCurso()">Registrar</button>
+        <button type="submit" class="button1">Registrar</button>
       </div>
     </form>
   </div>
 </div>
-

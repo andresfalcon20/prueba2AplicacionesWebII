@@ -20,6 +20,12 @@
       "nombre": "criko1",
       "email": "criko@gmail.com",
       "password": "1234"
+    },
+    {
+      "id": "840e",
+      "nombre": "andres",
+      "email": "andresfalcon.18@hotmail.com",
+      "password": "123456"
     }
   ]
 }

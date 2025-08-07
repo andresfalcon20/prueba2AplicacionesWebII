@@ -1,38 +1,38 @@
 import { Component, inject } from '@angular/core';
-import { FormBuilder, FormsModule, ReactiveFormsModule, Validators } from '@angular/forms';
+import { FormBuilder, FormGroup, FormsModule, ReactiveFormsModule, Validators } from '@angular/forms';
 import { CursosService } from '../../servicios/cursos.service';
 import { Router } from '@angular/router';
 import { Curso } from './curso';
 import { CommonModule } from '@angular/common';
+import { HorasPipe } from '../../pipes/horas.pipe';
 
 @Component({
   selector: 'app-crear-curso',
   standalone: true,
-  imports: [FormsModule, ReactiveFormsModule, CommonModule],
+  imports: [FormsModule, ReactiveFormsModule, CommonModule, HorasPipe],
   templateUrl: './crear-curso.component.html',
   styleUrl: './crear-curso.component.css'
 })
 export class CrearCursoComponent {
-  curso: Curso = {
-    nombre: '',
-    descripcion: '',
-    duracion: 1,
-    profesor: '',
-    categoria: '',
-    fechaInicio: ''
-  };
+   fb = inject(FormBuilder);
+  cursosService = inject(CursosService);
 
-constructor(private cursosService: CursosService) {}
+  cursoForm: FormGroup = this.fb.group({
+    nombre: ['', Validators.required],
+    descripcion: ['', Validators.required],
+    duracion: [1, [Validators.required, Validators.min(1)]],
+    profesor: ['', Validators.required],
+    categoria: ['', Validators.required],
+    fechaInicio: ['', Validators.required]
+  });
 
-agregarCurso() {
-  this.cursosService.agregarCurso({ ...this.curso });
-  this.curso = {
-    nombre: '',
-    descripcion: '',
-    duracion: 1,
-    profesor: '',
-    categoria: '',
-    fechaInicio: ''
-  };
-}
+  agregarCurso() {
+    if (this.cursoForm.valid) {
+      this.cursosService.agregarCurso(this.cursoForm.value);
+      alert('Curso agregado correctamente');
+      this.cursoForm.reset({ duracion: 1 });  
+    } else {
+      this.cursoForm.markAllAsTouched(); 
+    }
+  }
 }

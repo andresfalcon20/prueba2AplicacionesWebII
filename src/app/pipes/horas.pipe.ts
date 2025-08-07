@@ -6,8 +6,9 @@ import { Pipe, PipeTransform } from '@angular/core';
 })
 export class HorasPipe implements PipeTransform {
 
-  transform(value: unknown, ...args: unknown[]): unknown {
-    return null;
+   transform(value: number): string {
+    if (!value) return '';
+    return value === 1 ? '1 hora' : `${value} horas`;
   }
 
 }

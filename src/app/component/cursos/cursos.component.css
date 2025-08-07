@@ -1,0 +1,46 @@
+.lista-cursos {
+  max-width: 700px;
+  margin: 40px auto;
+  padding: 0 20px;
+  box-sizing: border-box;
+}
+
+.lista-cursos ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.curso-item {
+  background-color: #fff;
+  border-radius: 12px;
+  padding: 20px 25px;
+  margin-bottom: 20px;
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.07);
+  transition: box-shadow 0.3s ease;
+  cursor: default;
+}
+
+.curso-item:hover {
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.12);
+}
+
+.curso-item p {
+  margin: 6px 0;
+  color: #444;
+  font-size: 1rem;
+  line-height: 1.4;
+}
+
+.curso-item p strong {
+  color: #4f46e5;
+  font-size: 1.15rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.curso-item p:nth-child(3),
+.curso-item p:nth-child(6) {
+  font-weight: 600;
+  color: #6b7280; /
+}
