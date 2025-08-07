@@ -1,0 +1,25 @@
+{
+  "usuarios": [
+    {
+      "id": "3957"
+    },
+    {
+      "id": "92ba",
+      "nombre": "pk",
+      "email": "ola@gmail.com",
+      "password": "1234"
+    },
+    {
+      "id": "3285",
+      "nombre": "ola1",
+      "email": "ola@gmail.com",
+      "password": "123"
+    },
+    {
+      "id": "c175",
+      "nombre": "criko1",
+      "email": "criko@gmail.com",
+      "password": "1234"
+    }
+  ]
+}

@@ -1,0 +1,30 @@
+<div class="center-wrapper">
+<div class="container">
+  <div class="heading">Inicia Sesion</div>
+  <form class="form"  (ngSubmit)="login()">
+    <input
+     [(ngModel)]="usuario"
+      placeholder="Nombre De Usuario"
+      id="usuario"
+      name="usuario"
+      type="text"
+      class="input"
+      required=""
+    />
+    <input
+     [(ngModel)]="password"
+      placeholder="Password"
+      id="password"
+      name="password"
+      type="password"
+      class="input"
+      required=""
+    />
+    <input value="Inicia Sesion" type="submit" class="login-button" />
+  </form>
+
+  <div *ngIf="error" style="color: red;">{{error}}</div>
+
+ 
+</div>
+</div>

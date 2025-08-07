@@ -1,0 +1,36 @@
+<div class="card">
+  <div class="card2">
+    <form class="form">
+      <p id="heading">Registro de Cursos</p>
+
+      <div class="field">
+        <input [(ngModel)]="curso.nombre" name="nombre" class="input-field" placeholder="Nombre del curso" autocomplete="off" />
+      </div>
+
+      <div class="field">
+        <input [(ngModel)]="curso.descripcion" name="descripcion" class="input-field" placeholder="Descripción" autocomplete="off" />
+      </div>
+
+      <div class="field">
+        <input [(ngModel)]="curso.duracion" type="number" name="duracion" class="input-field" placeholder="Duración en horas" autocomplete="off" />
+      </div>
+
+      <div class="field">
+        <input [(ngModel)]="curso.profesor" name="profesor" class="input-field" placeholder="Profesor" autocomplete="off" />
+      </div>
+
+      <div class="field">
+        <input [(ngModel)]="curso.categoria" name="categoria" class="input-field" placeholder="Categoría" autocomplete="off" />
+      </div>
+
+      <div class="field">
+        <input [(ngModel)]="curso.fechaInicio" type="date" name="fechaInicio" class="input-field" />
+      </div>
+
+      <div class="btn">
+        <button type="button" class="button1" (click)="agregarCurso()">Registrar</button>
+      </div>
+    </form>
+  </div>
+</div>
+

@@ -1,0 +1,34 @@
+<div class="center-wrapper">
+<div class="container">
+  <div class="heading">Registro de Usuario</div>
+  <form (ngSubmit)="registrarUsuario()" #form="ngForm"  class="form" >
+    <input
+    [(ngModel)]="nombre" name="nombre"
+      placeholder="Nombre De Usuario"
+      id="usuario"
+      type="text"
+      class="input"
+      required=""
+    />
+      <input
+      [(ngModel)]="email" name="email"
+      placeholder="Correo Electronico"
+      id="email"
+      type="email"
+      class="input"
+      required=""
+    />
+
+    <input
+      [(ngModel)]="password" name="password"
+      placeholder="Password"
+      id="password"
+      type="password"
+      class="input"
+      required=""
+    />
+    <input value="Registrate" type="submit" class="login-button" />
+  </form>
+
+</div>
+</div>

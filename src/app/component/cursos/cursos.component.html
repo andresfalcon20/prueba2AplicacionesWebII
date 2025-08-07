@@ -1,0 +1,15 @@
+<br><br><br><br><br><br>
+<div class="lista-cursos">
+  <ul>
+    @for (curso of cursos; track curso.nombre) {
+      <li class="curso-item">
+        <p><strong>{{ curso.nombre | uppercase }}</strong></p>
+        <p>{{ curso.descripcion }}</p>
+        <p>Duración: {{ curso.duracion  }}</p>
+        <p>Profesor: {{ curso.profesor }}</p>
+        <p>Categoría: {{ curso.categoria }}</p>
+        <p>Inicio: {{ curso.fechaInicio }}</p>
+      </li>
+    }
+  </ul>
+</div>
